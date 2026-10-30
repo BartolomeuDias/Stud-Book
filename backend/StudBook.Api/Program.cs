@@ -1,12 +1,35 @@
+using Microsoft.EntityFrameworkCore;
+using StudBook.Api.Data;
+using StudBook.Api.Endpoints;
+using StudBook.Api.Models;
+using StudBook.Api.Pages;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Default")
+        ?? "Host=127.0.0.1;Port=5432;Database=studbook;Username=studbook;Password=studbook;SSL Mode=Disable"));
+
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+
+    if (!db.Users.Any())
+    {
+        db.Users.AddRange(
+            new User { Email = "client@test.com", Role = "Client", DisplayName = "Test Client" },
+            new User { Email = "staff@test.com", Role = "RanchStaff", DisplayName = "Dusty (Owner)" }
+        );
+        db.SaveChanges();
+    }
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -14,28 +37,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// Endpoints
+app.MapHealthEndpoints();
+app.MapAuthEndpoints();
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+// Pages
+app.MapGet("/", () => Results.Content(HomePage.Html, "text/html"));
+app.MapGet("/login", () => Results.Content(LoginPage.Html, "text/html"));
+app.MapGet("/client", () => Results.Content(ClientPage.Html, "text/html"));
+app.MapGet("/staff", () => Results.Content(StaffPage.Html, "text/html"));
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

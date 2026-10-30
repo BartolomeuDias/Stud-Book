@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: studbook-db
+    environment:
+      POSTGRES_USER: studbook
+      POSTGRES_PASSWORD: studbook
+      POSTGRES_DB: studbook
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./backend/StudBook.Api
+      dockerfile: Dockerfile
+    container_name: studbook-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=studbook;Username=studbook;Password=studbook"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
