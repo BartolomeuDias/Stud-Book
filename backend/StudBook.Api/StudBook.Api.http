@@ -1,0 +1,6 @@
+@StudBook.Api_HostAddress = http://localhost:5226
+
+GET {{StudBook.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
