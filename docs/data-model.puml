@@ -1,0 +1,79 @@
+@startuml StudBook_Data_Model
+!theme plain
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7F3EB
+  BorderColor #5C4033
+  HeaderBackgroundColor #D2B48C
+}
+
+entity "Users" as users {
+  * Id : int <<PK>>
+  --
+  Email : string
+  DisplayName : string
+  Role : string
+  PasswordHash : string
+}
+
+entity "Clients" as clients {
+  * Id : int <<PK>>
+  --
+  UserId : int <<FK>>
+  Name : string
+  ContactInfo : string
+  Notes : string
+}
+
+entity "Horses" as horses {
+  * Id : int <<PK>>
+  --
+  Name : string
+  Category : string
+  Sex : string
+  Breed : string
+  Color : string
+  DateOfBirth : date
+  OwnerClientId : int <<FK>>
+  SireId : int <<FK>>
+  DamId : int <<FK>>
+  IsActive : bool
+  Notes : string
+  CreatedAt : datetime
+}
+
+entity "Locations" as locations {
+  * Id : int <<PK>>
+  --
+  Name : string
+  Type : string
+}
+
+entity "HorsePlacements" as placements {
+  * Id : int <<PK>>
+  --
+  HorseId : int <<FK>>
+  LocationId : int <<FK>>
+  ArrivedAt : datetime
+  LeftAt : datetime
+  Origin : string
+  Notes : string
+}
+
+entity "CompatibilityRules" as rules {
+  * Id : int <<PK>>
+  --
+  Code : string
+  Description : string
+  IsActive : bool
+  Priority : int
+}
+
+users ||--o| clients : "may login as"
+clients ||--o{ horses : "owns mares"
+horses ||--o{ horses : "sire"
+horses ||--o{ horses : "dam"
+horses ||--o{ placements : "history"
+locations ||--o{ placements : "placed at"
+
+@enduml
