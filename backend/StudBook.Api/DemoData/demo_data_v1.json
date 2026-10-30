@@ -1,0 +1,308 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "Hill Country Stables",
+      "contactInfo": "hill@example.com",
+      "notes": "Regular client, prefers Iron Duke bloodlines"
+    },
+    {
+      "id": 2,
+      "name": "River Bend Ranch",
+      "contactInfo": "river@example.com",
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "name": "Lone Star Mares",
+      "contactInfo": "lonestar@example.com",
+      "notes": "Remote client"
+    },
+    {
+      "id": 4,
+      "name": "Cedar Creek Farm",
+      "contactInfo": "cedar@example.com",
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "name": "Bluebonnet Equine",
+      "contactInfo": "blue@example.com",
+      "notes": ""
+    },
+    {
+      "id": 6,
+      "name": "Prairie Wind Stables",
+      "contactInfo": "prairie@example.com",
+      "notes": "New client, 2026"
+    }
+  ],
+  "horses": [
+    {
+      "id": 1,
+      "name": "Iron Duke",
+      "category": "OwnStallion",
+      "sex": "Stallion",
+      "breed": "Quarter Horse",
+      "color": "Bay",
+      "dateOfBirth": "2016-03-12",
+      "ownerClientId": null,
+      "sireId": null,
+      "damId": null,
+      "isActive": true,
+      "notes": "Main ranch stallion"
+    },
+    {
+      "id": 2,
+      "name": "Texas Legend",
+      "category": "OwnStallion",
+      "sex": "Stallion",
+      "breed": "Quarter Horse",
+      "color": "Chestnut",
+      "dateOfBirth": "2015-05-20",
+      "ownerClientId": null,
+      "sireId": null,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "name": "Midnight Crow",
+      "category": "ManagedStallion",
+      "sex": "Stallion",
+      "breed": "Thoroughbred",
+      "color": "Black",
+      "dateOfBirth": "2017-04-08",
+      "ownerClientId": null,
+      "sireId": null,
+      "damId": null,
+      "isActive": true,
+      "notes": "On management contract"
+    },
+    {
+      "id": 4,
+      "name": "Golden Trail",
+      "category": "ManagedStallion",
+      "sex": "Stallion",
+      "breed": "Quarter Horse",
+      "color": "Palomino",
+      "dateOfBirth": "2019-06-15",
+      "ownerClientId": null,
+      "sireId": 1,
+      "damId": null,
+      "isActive": true,
+      "notes": "Son of Iron Duke"
+    },
+    {
+      "id": 5,
+      "name": "Storm Rider",
+      "category": "OwnStallion",
+      "sex": "Stallion",
+      "breed": "Quarter Horse",
+      "color": "Gray",
+      "dateOfBirth": "2018-02-28",
+      "ownerClientId": null,
+      "sireId": 2,
+      "damId": null,
+      "isActive": true,
+      "notes": "Son of Texas Legend"
+    },
+    {
+      "id": 6,
+      "name": "Silver Chief",
+      "category": "ManagedStallion",
+      "sex": "Stallion",
+      "breed": "Paint Horse",
+      "color": "Tobiano",
+      "dateOfBirth": "2016-09-10",
+      "ownerClientId": null,
+      "sireId": null,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 7,
+      "name": "Daisy Belle",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Quarter Horse",
+      "color": "Bay",
+      "dateOfBirth": "2018-04-22",
+      "ownerClientId": 1,
+      "sireId": 1,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 8,
+      "name": "Prairie Rose",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Quarter Horse",
+      "color": "Chestnut",
+      "dateOfBirth": "2019-07-03",
+      "ownerClientId": 1,
+      "sireId": 2,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 9,
+      "name": "Luna Star",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Thoroughbred",
+      "color": "Bay",
+      "dateOfBirth": "2017-11-14",
+      "ownerClientId": 2,
+      "sireId": 3,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 10,
+      "name": "Amber Light",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Quarter Horse",
+      "color": "Palomino",
+      "dateOfBirth": "2020-01-30",
+      "ownerClientId": 2,
+      "sireId": 4,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 11,
+      "name": "Willow Creek",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Quarter Horse",
+      "color": "Brown",
+      "dateOfBirth": "2018-08-19",
+      "ownerClientId": 3,
+      "sireId": 1,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 12,
+      "name": "Sage Blossom",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Quarter Horse",
+      "color": "Gray",
+      "dateOfBirth": "2019-05-05",
+      "ownerClientId": 3,
+      "sireId": 5,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 13,
+      "name": "Coral Dawn",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Quarter Horse",
+      "color": "Chestnut",
+      "dateOfBirth": "2017-12-01",
+      "ownerClientId": 4,
+      "sireId": 2,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 14,
+      "name": "Misty River",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Thoroughbred",
+      "color": "Bay",
+      "dateOfBirth": "2018-03-17",
+      "ownerClientId": 5,
+      "sireId": 3,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    },
+    {
+      "id": 15,
+      "name": "Honey Bay",
+      "category": "ClientMare",
+      "sex": "Mare",
+      "breed": "Paint Horse",
+      "color": "Bay Tobiano",
+      "dateOfBirth": "2020-06-09",
+      "ownerClientId": 6,
+      "sireId": 6,
+      "damId": null,
+      "isActive": true,
+      "notes": ""
+    }
+  ],
+  "locations": [
+    { "id": 1, "name": "Barn A", "type": "Stall" },
+    { "id": 2, "name": "Barn B", "type": "Stall" },
+    { "id": 3, "name": "North Paddock", "type": "Paddock" },
+    { "id": 4, "name": "South Paddock", "type": "Paddock" }
+  ],
+  "placements": [
+    { "id": 1,  "horseId": 1,  "locationId": 1, "arrivedAt": "2026-03-01", "leftAt": null,         "origin": "Home ranch",              "notes": "" },
+    { "id": 2,  "horseId": 2,  "locationId": 1, "arrivedAt": "2026-03-01", "leftAt": null,         "origin": "Home ranch",              "notes": "" },
+    { "id": 3,  "horseId": 3,  "locationId": 2, "arrivedAt": "2026-04-10", "leftAt": null,         "origin": "Owner delivery",          "notes": "" },
+    { "id": 4,  "horseId": 4,  "locationId": 2, "arrivedAt": "2026-05-01", "leftAt": null,         "origin": "Home ranch",              "notes": "" },
+    { "id": 5,  "horseId": 5,  "locationId": 1, "arrivedAt": "2026-03-15", "leftAt": null,         "origin": "Home ranch",              "notes": "" },
+    { "id": 6,  "horseId": 6,  "locationId": 3, "arrivedAt": "2026-06-01", "leftAt": null,         "origin": "Owner delivery",          "notes": "" },
+    { "id": 7,  "horseId": 7,  "locationId": 2, "arrivedAt": "2026-09-05", "leftAt": null,         "origin": "Hill Country Stables",    "notes": "" },
+    { "id": 8,  "horseId": 8,  "locationId": 2, "arrivedAt": "2026-09-05", "leftAt": null,         "origin": "Hill Country Stables",    "notes": "" },
+    { "id": 9,  "horseId": 9,  "locationId": 3, "arrivedAt": "2026-09-12", "leftAt": null,         "origin": "River Bend Ranch",        "notes": "" },
+    { "id": 10, "horseId": 10, "locationId": 3, "arrivedAt": "2026-09-12", "leftAt": null,         "origin": "River Bend Ranch",        "notes": "" },
+    { "id": 11, "horseId": 11, "locationId": 4, "arrivedAt": "2026-09-20", "leftAt": null,         "origin": "Lone Star Mares",         "notes": "" },
+    { "id": 12, "horseId": 12, "locationId": 4, "arrivedAt": "2026-09-20", "leftAt": null,         "origin": "Lone Star Mares",         "notes": "" },
+    { "id": 13, "horseId": 13, "locationId": 2, "arrivedAt": "2026-10-01", "leftAt": null,         "origin": "Cedar Creek Farm",        "notes": "" },
+    { "id": 14, "horseId": 14, "locationId": 3, "arrivedAt": "2026-10-03", "leftAt": null,         "origin": "Bluebonnet Equine",       "notes": "" },
+    { "id": 15, "horseId": 15, "locationId": 4, "arrivedAt": "2026-10-05", "leftAt": null,         "origin": "Prairie Wind Stables",    "notes": "" },
+    { "id": 16, "horseId": 7,  "locationId": 3, "arrivedAt": "2026-06-01", "leftAt": "2026-08-20", "origin": "Hill Country Stables",    "notes": "Previous stay" },
+    { "id": 17, "horseId": 9,  "locationId": 1, "arrivedAt": "2026-05-10", "leftAt": "2026-07-15", "origin": "River Bend Ranch",        "notes": "Previous stay" },
+    { "id": 18, "horseId": 11, "locationId": 2, "arrivedAt": "2026-04-01", "leftAt": "2026-06-30", "origin": "Lone Star Mares",         "notes": "Previous stay" },
+    { "id": 19, "horseId": 1,  "locationId": 3, "arrivedAt": "2025-11-01", "leftAt": "2026-02-28", "origin": "Home ranch",              "notes": "Winter paddock" },
+    { "id": 20, "horseId": 2,  "locationId": 4, "arrivedAt": "2025-11-01", "leftAt": "2026-02-28", "origin": "Home ranch",              "notes": "Winter paddock" },
+    { "id": 21, "horseId": 5,  "locationId": 3, "arrivedAt": "2025-12-01", "leftAt": "2026-03-01", "origin": "Home ranch",              "notes": "" },
+    { "id": 22, "horseId": 3,  "locationId": 1, "arrivedAt": "2026-01-15", "leftAt": "2026-04-09", "origin": "Owner delivery",          "notes": "First placement" },
+    { "id": 23, "horseId": 13, "locationId": 4, "arrivedAt": "2026-07-01", "leftAt": "2026-09-25", "origin": "Cedar Creek Farm",        "notes": "Previous stay" },
+    { "id": 24, "horseId": 14, "locationId": 2, "arrivedAt": "2026-06-15", "leftAt": "2026-09-28", "origin": "Bluebonnet Equine",       "notes": "Previous stay" },
+    { "id": 25, "horseId": 8,  "locationId": 4, "arrivedAt": "2026-05-20", "leftAt": "2026-08-31", "origin": "Hill Country Stables",    "notes": "Previous stay" }
+  ],
+  "compatibilityRules": [
+    {
+      "id": 1,
+      "code": "NO_CLOSE_KIN",
+      "description": "Pair is not allowed if horses share a parent (sire or dam).",
+      "isActive": true,
+      "priority": 1
+    },
+    {
+      "id": 2,
+      "code": "MARE_MUST_BE_READY",
+      "description": "Mare must have an active readiness record before breeding is allowed.",
+      "isActive": true,
+      "priority": 2
+    },
+    {
+      "id": 3,
+      "code": "STALLION_NOT_OVERBOOKED",
+      "description": "Stallion cannot exceed the agreed number of breedings in a season.",
+      "isActive": true,
+      "priority": 3
+    }
+  ]
+}
