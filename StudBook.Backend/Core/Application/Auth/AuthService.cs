@@ -12,7 +12,7 @@ namespace Application.Auth
                 return null;
 
             // Демо-токен. Позже заменить на JWT.
-            var token = "demo-token-" + user.Role.ToLower();
+            var token = "demo-token-" + user.Role.ToString().ToLower();
             return new LoginResult(token, UserDto.From(user));
         }
     }
