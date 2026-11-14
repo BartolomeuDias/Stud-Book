@@ -13,7 +13,7 @@ services:
 
   api:
     build:
-      context: ./backend/StudBook.Api
+      context: ./StudBook.Backend
       dockerfile: Dockerfile
     container_name: studbook-api
     environment:
@@ -23,6 +23,18 @@ services:
       - "8080:8080"
     depends_on:
       - db
+
+  # Статические HTML-страницы (позже здесь будет сборка Flutter Web)
+  frontend:
+    image: nginx:alpine
+    container_name: studbook-frontend
+    volumes:
+      - ./StudBook.Frontend/html:/usr/share/nginx/html:ro
+      - ./StudBook.Frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "8081:80"
+    depends_on:
+      - api
 
 volumes:
   pgdata:
