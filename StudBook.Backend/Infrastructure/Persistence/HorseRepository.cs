@@ -33,5 +33,12 @@ namespace Infrastructure.Persistence
             .Include(h => h.Dam)!.ThenInclude(d => d!.Sire)
             .Include(h => h.Dam)!.ThenInclude(d => d!.Dam)
             .FirstOrDefaultAsync(h => h.Id == id, cancellationToken);
+
+        public async Task<Horse> AddAsync(Horse horse, CancellationToken cancellationToken = default)
+        {
+            db.Horses.Add(horse);
+            await db.SaveChangesAsync(cancellationToken);
+            return horse;
+        }
     }
 }

@@ -12,4 +12,6 @@ public interface IHorseRepository
         CancellationToken cancellationToken = default);
 
     Task<Horse?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+
+    Task<Horse> AddAsync(Horse horse, CancellationToken cancellationToken = default);
 }

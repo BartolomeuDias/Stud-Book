@@ -1,4 +1,5 @@
 using Application.Auth;
+using Application.Clients;
 using Application.Services.Horses;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,6 +10,7 @@ public static class DependencyInjection
     {
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IHorseService, HorseService>();
+        services.AddScoped<IClientService, ClientService>();
         return services;
     }
 }

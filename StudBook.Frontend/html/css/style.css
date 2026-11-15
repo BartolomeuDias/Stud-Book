@@ -97,3 +97,50 @@ a.pedigree-name:hover {
     color: #9a8a7a;
     margin: 0;
 }
+
+/* --- Форма добавления лошади (OW-03) --- */
+.horse-form { margin-top: 8px; }
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 20px;
+}
+@media (max-width: 640px) {
+    .form-grid { grid-template-columns: 1fr; }
+}
+.horse-form label,
+.horse-form label.full {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: #7a6a5a;
+}
+.horse-form label.full { margin-top: 14px; }
+.horse-form input,
+.horse-form select,
+.horse-form textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 8px 10px;
+    border: 1px solid #d2b48c;
+    border-radius: 6px;
+    background: #fff;
+    color: #2c2c2c;
+}
+.horse-form textarea { resize: vertical; }
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.form-error {
+    margin: 12px 0 0;
+    color: #8b2914;
+    background: #f8ebe6;
+    border: 1px solid #e8c4b8;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+}
