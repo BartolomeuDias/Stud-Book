@@ -12,6 +12,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<StudBookDbContext>(options => options.UseNpgsql(connectionString));
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IHorseRepository, HorseRepository>();
         services.AddScoped<DatabaseSeeder>();
         return services;
     }
