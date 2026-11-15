@@ -73,11 +73,10 @@ services:
         condition: service_healthy
 
   frontend:
-    image: nginx:alpine
+    build:
+      context: ./StudBook.Frontend/app
+      dockerfile: Dockerfile
     container_name: studbook-frontend
-    volumes:
-      - ./StudBook.Frontend/html:/usr/share/nginx/html:ro
-      - ./StudBook.Frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - "8081:80"
     depends_on:

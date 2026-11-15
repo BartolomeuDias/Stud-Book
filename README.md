@@ -6,13 +6,14 @@
   - `Core/Application` — сервисы, DTO, интерфейсы (репозитории)
   - `Infrastructure` — EF Core / PostgreSQL, сидер, демоданные (`Seed/demo_data_v1.json`)
   - `Web` — контроллеры, контракты (HTTP-модели), `Program.cs`
-- `StudBook.Frontend/` — HTML-заглушки (`html/`), позже Flutter
+- `StudBook.Frontend/app` — Flutter Web клиент (desktop), подробности в `StudBook.Frontend/app/README.md`
+- `StudBook.Frontend/html` — старые HTML-заглушки, больше не раздаются
 - `docs/` — проектная документация
 
 ## Запуск через Docker
     docker compose up --build
 
-- Страницы: http://localhost:8081
+- Приложение: http://localhost:8081
 - API / OpenAPI: http://localhost:8080 (`/health`, `/openapi/v1.json`)
 
 ## Запуск локально (без Docker для API)
@@ -20,5 +21,9 @@
     cd StudBook.Backend/Web
     dotnet run
 
-API: http://localhost:5266 (см. `Properties/launchSettings.json`). Страницы без nginx не раздаются:
-для них нужен `docker compose up frontend`.
+API: http://localhost:5266 (см. `Properties/launchSettings.json`). Фронт в режиме разработки:
+
+    cd StudBook.Frontend/app
+    fvm flutter run -d chrome --dart-define=API_BASE_URL=http://localhost:5266
+
+В Development API разрешает CORS для localhost.
