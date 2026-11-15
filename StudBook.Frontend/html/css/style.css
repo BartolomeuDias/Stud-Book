@@ -22,3 +22,78 @@ a { color: #8b4513; }
 button { margin: 8px 8px 0 0; padding: 10px 16px; cursor: pointer; }
 #result { margin-top: 20px; white-space: pre-wrap; font-size: 14px; }
 .back { margin-top: 24px; }
+
+/* --- Карточка лошади / родословная (OW-02) --- */
+
+.detail-list {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 6px 16px;
+    margin: 0;
+    font-size: 0.95rem;
+}
+.detail-list dt {
+    color: #7a6a5a;
+    margin: 0;
+}
+.detail-list dd {
+    margin: 0;
+    color: #2c2c2c;
+}
+
+.pedigree {
+    margin-top: 8px;
+}
+.pedigree-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.pedigree-row.grandparents .pedigree-node {
+    flex: 1 1 140px;
+    min-width: 140px;
+}
+.pedigree-row.parents .pedigree-node {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+
+.pedigree-node {
+    background: #faf6ef;
+    border: 1px solid #e8d9c0;
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+.pedigree-node.empty {
+    opacity: 0.55;
+}
+.pedigree-role {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #9a8a7a;
+    margin-bottom: 4px;
+}
+.pedigree-name {
+    display: block;
+    font-weight: 600;
+    color: #3d2b1f;
+    text-decoration: none;
+}
+a.pedigree-name:hover {
+    text-decoration: underline;
+    color: #8b4513;
+}
+.pedigree-meta {
+    display: block;
+    font-size: 0.85rem;
+    color: #7a6a5a;
+    margin-top: 2px;
+}
+.pedigree-hint {
+    font-size: 0.85rem;
+    color: #9a8a7a;
+    margin: 0;
+}

@@ -54,14 +54,14 @@
         registryEl.innerHTML = sections.map(cat => {
             const rows = groups[cat].map(h => `
                 <tr>
-                    <td class="name">${escapeHtml(h.name)}</td>
+                    <td class="name"><a href="/horse?id=${h.id}">${escapeHtml(h.name)}</a></td>
                     <td>${escapeHtml(h.sex)}</td>
                     <td>${escapeHtml(h.breed)}</td>
                     <td>${escapeHtml(h.color)}</td>
                     <td>${h.dateOfBirth || '—'}</td>
                     <td>${escapeHtml(h.ownerName || '—')}</td>
                     <td class="actions">
-                        <a class="link-muted" href="#" title="Карточка появится в OW-02">карточка</a>
+                        <a class="link-muted" href="/horse?id=${h.id}">карточка</a>
                     </td>
                 </tr>
             `).join('');
