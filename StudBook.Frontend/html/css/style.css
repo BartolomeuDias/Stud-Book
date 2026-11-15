@@ -1,0 +1,218 @@
+body {
+    font-family: Georgia, serif;
+    max-width: 600px;
+    margin: 80px auto;
+    background: #f7f3eb;
+    color: #2c2c2c;
+}
+body.narrow { max-width: 480px; }
+
+.card {
+    background: #fff;
+    padding: 32px;
+    border: 1px solid #d2b48c;
+    border-radius: 8px;
+}
+
+h1 { color: #5c4033; margin-top: 0; }
+
+a { color: #8b4513; }
+.card.menu a { display: block; margin: 12px 0; }
+
+button { margin: 8px 8px 0 0; padding: 10px 16px; cursor: pointer; }
+#result { margin-top: 20px; white-space: pre-wrap; font-size: 14px; }
+.back { margin-top: 24px; }
+
+/* --- Карточка лошади / родословная (OW-02) --- */
+
+.detail-list {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 6px 16px;
+    margin: 0;
+    font-size: 0.95rem;
+}
+.detail-list dt {
+    color: #7a6a5a;
+    margin: 0;
+}
+.detail-list dd {
+    margin: 0;
+    color: #2c2c2c;
+}
+
+.pedigree {
+    margin-top: 8px;
+}
+.pedigree-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.pedigree-row.grandparents .pedigree-node {
+    flex: 1 1 140px;
+    min-width: 140px;
+}
+.pedigree-row.parents .pedigree-node {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+
+.pedigree-node {
+    background: #faf6ef;
+    border: 1px solid #e8d9c0;
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+.pedigree-node.empty {
+    opacity: 0.55;
+}
+.pedigree-role {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #9a8a7a;
+    margin-bottom: 4px;
+}
+.pedigree-name {
+    display: block;
+    font-weight: 600;
+    color: #3d2b1f;
+    text-decoration: none;
+}
+a.pedigree-name:hover {
+    text-decoration: underline;
+    color: #8b4513;
+}
+.pedigree-meta {
+    display: block;
+    font-size: 0.85rem;
+    color: #7a6a5a;
+    margin-top: 2px;
+}
+.pedigree-hint {
+    font-size: 0.85rem;
+    color: #9a8a7a;
+    margin: 0;
+}
+
+/* --- Форма добавления лошади (OW-03) --- */
+.horse-form { margin-top: 8px; }
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 20px;
+}
+@media (max-width: 640px) {
+    .form-grid { grid-template-columns: 1fr; }
+}
+.horse-form label,
+.horse-form label.full {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: #7a6a5a;
+}
+.horse-form label.full { margin-top: 14px; }
+.horse-form input,
+.horse-form select,
+.horse-form textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 8px 10px;
+    border: 1px solid #d2b48c;
+    border-radius: 6px;
+    background: #fff;
+    color: #2c2c2c;
+}
+.horse-form textarea { resize: vertical; }
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.form-error {
+    margin: 12px 0 0;
+    color: #8b2914;
+    background: #f8ebe6;
+    border: 1px solid #e8c4b8;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+}
+
+button.btn-danger {
+    background: #f8ebe6;
+    border-color: #e8c4b8;
+    color: #8b2914;
+}
+button.btn-danger:hover {
+    filter: brightness(0.97);
+}
+
+/* --- Правила совместимости (OW-15) --- */
+body.wide { max-width: 1100px; }
+
+.rules-table {
+    width: 100%;
+    table-layout: fixed; /* колонки не прыгают */
+    font-size: 0.88rem;
+}
+.rules-table th,
+.rules-table td {
+    vertical-align: top;
+    padding: 10px 8px;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+.rules-table th {
+    white-space: normal;
+}
+
+.col-priority { width: 5.5rem; }
+.col-code     { width: 9rem; }
+.col-text     { width: auto; }
+.col-threshold{ width: 7rem; }
+.col-source   { width: 8.5rem; }
+.col-active   { width: 7.5rem; }
+
+.rules-table code {
+    font-size: 0.8rem;
+    background: #f0e6d6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    word-break: break-all;
+}
+.rules-table .unit,
+.rules-table .muted {
+    display: block;
+    color: #9a8a7a;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+.check-active {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    color: #5c4033;
+    font-size: 0.9rem;
+}
+.rules-table input[type="number"],
+.rules-table select {
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 4px 6px;
+    border: 1px solid #d2b48c;
+    border-radius: 4px;
+    background: #fff;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.rules-table .input-priority { width: 3.5rem; }
+.rules-table .input-threshold { width: 3.5rem; }
+.btn-save-row { margin-top: 4px; width: 100%; }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Карточка лошади — Stud Book</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="wide">
+    <div class="card">
+        <header class="page-header">
+            <div>
+                <h1 id="horse-name">Карточка лошади</h1>
+                <p class="subtitle" id="horse-subtitle">Загрузка…</p>
+            </div>
+            <nav class="top-nav">
+                <a href="/staff">← К реестру</a>
+                <a id="link-edit" href="#">Редактировать</a>
+                <button type="button" id="btn-delete" class="btn-danger">Убрать из реестра</button>
+                <a href="/login">Сменить роль</a>
+            </nav>
+        </header>
+
+        <p id="status" class="status">Загрузка…</p>
+
+        <div id="card-content" hidden>
+            <!-- Основные данные -->
+            <section class="horse-section">
+                <h2>Основные сведения</h2>
+                <dl class="detail-list" id="details"></dl>
+            </section>
+
+            <!-- Родословная (2 поколения) -->
+            <section class="horse-section">
+                <h2>Родословная</h2>
+                <div class="pedigree" id="pedigree"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="/js/horse.js"></script>
+</body>
+</html>

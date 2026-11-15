@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Редактировать лошадь — Stud Book</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+    <body class="wide">
+        <div class="card">
+            <header class="page-header">
+                <div>
+                    <h1>Редактировать лошадь</h1>
+                    <p class="subtitle" id="subtitle">Загрузка…</p>
+                </div>
+                <nav class="top-nav">
+                    <a id="link-card" href="/staff">← К карточке</a>
+                    <a href="/staff">Реестр</a>
+                </nav>
+            </header>
+
+            <p id="status" class="status">Загрузка…</p>
+
+            <form id="form" class="horse-form" hidden>
+                <div class="form-grid">
+                    <label>
+                        Кличка *
+                        <input name="name" required maxlength="200" autocomplete="off">
+                    </label>
+                    <label>
+                        Категория *
+                        <select name="category" id="category" required>
+                            <option value="OwnStallion">Свой жеребец</option>
+                            <option value="ManagedStallion">Жеребец на управлении</option>
+                            <option value="ClientHorse">Лошадь клиента</option>
+                        </select>
+                    </label>
+                    <label>
+                        Пол *
+                        <select name="sex" id="sex" required>
+                            <option value="Stallion">Жеребец</option>
+                            <option value="Mare">Кобыла</option>
+                            <option value="Gelding">Мерин</option>
+                        </select>
+                    </label>
+                    <label>
+                        Порода *
+                        <input name="breed" required maxlength="100">
+                    </label>
+                    <label>
+                        Масть *
+                        <input name="color" required maxlength="50">
+                    </label>
+                    <label>
+                        Дата рождения
+                        <input name="dateOfBirth" type="date">
+                    </label>
+                    <label>
+                        Рег. номер
+                        <input name="registrationNumber" maxlength="50">
+                    </label>
+                    <label id="owner-field">
+                        Владелец (клиент)
+                        <select name="ownerClientId" id="ownerClientId">
+                            <option value="">— не указан —</option>
+                        </select>
+                    </label>
+                    <label>
+                        Отец (жеребец)
+                        <select name="sireId" id="sireId">
+                            <option value="">— не указан —</option>
+                        </select>
+                    </label>
+                    <label>
+                        Мать (кобыла)
+                        <select name="damId" id="damId">
+                            <option value="">— не указан —</option>
+                        </select>
+                    </label>
+                </div>
+                <label class="full">
+                    Заметки
+                    <textarea name="notes" rows="3" maxlength="2000"></textarea>
+                </label>
+
+                <p id="form-error" class="form-error" hidden></p>
+                <div class="form-actions">
+                    <button type="submit">Сохранить</button>
+                    <a class="link-muted" id="link-cancel" href="/staff">Отмена</a>
+                </div>
+            </form>
+        </div>
+
+        <script src="/js/horse-edit.js"></script>
+    </body>
+</html>

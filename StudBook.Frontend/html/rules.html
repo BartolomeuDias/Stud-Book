@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Правила совместимости — Stud Book</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+    <body class="wide">
+        <div class="card">
+            <header class="page-header">
+                <div>
+                    <h1>Правила совместимости</h1>
+                    <p class="subtitle">Единая таблица проверок пар · согласуется с ветеринаром</p>
+                </div>
+                <nav class="top-nav">
+                    <a href="/staff">← Реестр</a>
+                    <a href="/login">Сменить роль</a>
+                </nav>
+            </header>
+
+            <p class="status" id="status">Загрузка…</p>
+            <div class="table-wrap">
+                <table class="horse-table rules-table" id="rules-table" hidden>
+                    <thead>
+                        <tr>
+                            <th>Приоритет</th>
+                            <th>Код</th>
+                            <th>Описание</th>
+                            <th>Сообщение при отказе</th>
+                            <th>Порог</th>
+                            <th>Источник</th>
+                            <th>Активно</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rules-body"></tbody>
+                </table>
+            </div>
+            <p id="save-msg" class="status"></p>
+        </div>
+        <script src="/js/rules.js"></script>
+    </body>
+</html>

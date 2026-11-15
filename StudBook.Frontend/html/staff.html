@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Реестр лошадей — Stud Book</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="wide">
+    <div class="card">
+        <header class="page-header">
+            <div>
+                <h1>Реестр лошадей</h1>
+                <p class="subtitle">Ranch Staff · Dusty</p>
+            </div>
+            <nav class="top-nav">
+                <a href="/horse-add">Добавить лошадь</a>
+                <a href="/rules">Правила совместимости</a>
+                <a href="/login">Сменить роль</a>
+            </nav>
+        </header>
+
+        <div class="filters">
+            <button type="button" class="filter-btn active" data-category="">Все</button>
+            <button type="button" class="filter-btn" data-category="OwnStallion">Свои жеребцы</button>
+            <button type="button" class="filter-btn" data-category="ManagedStallion">На управлении</button>
+            <button type="button" class="filter-btn" data-category="ClientHorse">Лошади клиентов</button>
+        </div>
+
+        <p id="status" class="status">Загрузка…</p>
+
+        <div id="registry"></div>
+    </div>
+
+    <script src="/js/registry.js"></script>
+</body>
+</html>
