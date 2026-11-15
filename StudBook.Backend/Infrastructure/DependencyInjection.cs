@@ -14,6 +14,7 @@ public static class DependencyInjection
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IHorseRepository, HorseRepository>();
         services.AddScoped<IClientRepository, ClientRepository>();
+        services.AddScoped<ICompatibilityRuleRepository, CompatibilityRuleRepository>();
         services.AddScoped<DatabaseSeeder>();
         return services;
     }

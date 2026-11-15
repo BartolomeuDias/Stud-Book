@@ -153,3 +153,66 @@ button.btn-danger {
 button.btn-danger:hover {
     filter: brightness(0.97);
 }
+
+/* --- Правила совместимости (OW-15) --- */
+body.wide { max-width: 1100px; }
+
+.rules-table {
+    width: 100%;
+    table-layout: fixed; /* колонки не прыгают */
+    font-size: 0.88rem;
+}
+.rules-table th,
+.rules-table td {
+    vertical-align: top;
+    padding: 10px 8px;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+.rules-table th {
+    white-space: normal;
+}
+
+.col-priority { width: 5.5rem; }
+.col-code     { width: 9rem; }
+.col-text     { width: auto; }
+.col-threshold{ width: 7rem; }
+.col-source   { width: 8.5rem; }
+.col-active   { width: 7.5rem; }
+
+.rules-table code {
+    font-size: 0.8rem;
+    background: #f0e6d6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    word-break: break-all;
+}
+.rules-table .unit,
+.rules-table .muted {
+    display: block;
+    color: #9a8a7a;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+.check-active {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    color: #5c4033;
+    font-size: 0.9rem;
+}
+.rules-table input[type="number"],
+.rules-table select {
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 4px 6px;
+    border: 1px solid #d2b48c;
+    border-radius: 4px;
+    background: #fff;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.rules-table .input-priority { width: 3.5rem; }
+.rules-table .input-threshold { width: 3.5rem; }
+.btn-save-row { margin-top: 4px; width: 100%; }
