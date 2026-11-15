@@ -34,11 +34,19 @@ namespace Infrastructure.Persistence
             .Include(h => h.Dam)!.ThenInclude(d => d!.Dam)
             .FirstOrDefaultAsync(h => h.Id == id, cancellationToken);
 
+        public Task<Horse?> GetTrackedByIdAsync(int id, CancellationToken cancellationToken = default) =>
+            db.Horses.FirstOrDefaultAsync(h => h.Id == id, cancellationToken);
+
         public async Task<Horse> AddAsync(Horse horse, CancellationToken cancellationToken = default)
         {
             db.Horses.Add(horse);
             await db.SaveChangesAsync(cancellationToken);
             return horse;
+        }
+
+        public async Task UpdateAsync(Horse horse, CancellationToken cancellationToken = default)
+        {
+            await db.SaveChangesAsync(cancellationToken);
         }
     }
 }

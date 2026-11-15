@@ -62,6 +62,8 @@
                     <td>${escapeHtml(h.ownerName || '—')}</td>
                     <td class="actions">
                         <a class="link-muted" href="/horse?id=${h.id}">карточка</a>
+                        ·
+                        <a class="link-muted" href="/horse-edit?id=${h.id}">изменить</a>
                     </td>
                 </tr>
             `).join('');

@@ -130,4 +130,34 @@
         return;
     }
     load(id);
+
+    // --- edit / delete ---
+    const linkEdit = document.getElementById('link-edit');
+    const btnDelete = document.getElementById('btn-delete');
+
+    if (linkEdit) {
+        linkEdit.href = '/horse-edit?id=' + id;
+    }
+
+    if (btnDelete) {
+        btnDelete.addEventListener('click', async () => {
+            if (!confirm('Убрать лошадь из реестра?\nЗапись сохранится для родословных, но в списке реестра отображаться не будет.')) {
+                return;
+            }
+            try {
+                const res = await fetch('/api/horses/' + id, { method: 'DELETE' });
+                if (res.status === 404) {
+                    alert('Лошадь не найдена');
+                    return;
+                }
+                if (!res.ok) {
+                    alert('Ошибка: ' + res.status);
+                    return;
+                }
+                location.href = '/staff';
+            } catch (e) {
+                alert('Не удалось связаться с API: ' + e.message);
+            }
+        });
+    }
 })();

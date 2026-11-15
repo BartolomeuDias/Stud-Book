@@ -144,3 +144,12 @@ a.pedigree-name:hover {
     padding: 10px 12px;
     font-size: 0.9rem;
 }
+
+button.btn-danger {
+    background: #f8ebe6;
+    border-color: #e8c4b8;
+    color: #8b2914;
+}
+button.btn-danger:hover {
+    filter: brightness(0.97);
+}

@@ -28,5 +28,25 @@ namespace Application.Services.Horses
             int? damId,
             string notes,
             CancellationToken cancellationToken = default);
+
+        Task<HorseCardDto?> UpdateAsync(
+            int id,
+            string name,
+            HorseCategory category,
+            HorseSex sex,
+            string breed,
+            string color,
+            DateOnly? dateOfBirth,
+            string? registrationNumber,
+            int? ownerClientId,
+            int? sireId,
+            int? damId,
+            string notes,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Убрать из реестра (IsActive = false). Запись для родословной сохраняется.
+        /// </summary>
+        Task<bool> DeactivateAsync(int id, CancellationToken cancellationToken = default);
     }
 }
