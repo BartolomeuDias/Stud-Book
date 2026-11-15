@@ -39,5 +39,15 @@ namespace Web.Controllers
             var items = await horses.ListRegistryAsync(cat, cancellationToken);
             return Ok(items);
         }
+
+        /// <summary>
+        /// Карточка лошади с родословной на 2 поколения (OW-02.2, OW-02.3).
+        /// </summary>
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetCard(int id, CancellationToken cancellationToken = default)
+        {
+            var card = await horses.GetCardAsync(id, cancellationToken);
+            return card is null ? NotFound() : Ok(card);
+        }
     }
 }

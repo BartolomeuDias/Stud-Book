@@ -13,5 +13,13 @@ namespace Application.Services.Horses
             var list = await horses.ListActiveAsync(category, cancellationToken);
             return list.Select(HorseListItemDto.From).ToList();
         }
+
+        public async Task<HorseCardDto?> GetCardAsync(
+        int id,
+        CancellationToken cancellationToken = default)
+        {
+            var horse = await horses.GetByIdAsync(id, cancellationToken);
+            return horse is null ? null : HorseCardDto.From(horse);
+        }
     }
 }
