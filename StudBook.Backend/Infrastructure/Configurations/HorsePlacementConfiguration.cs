@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Domain;
+using StudBook.Domain;
  
 namespace Infrastructure.Persistence.Configurations;
  

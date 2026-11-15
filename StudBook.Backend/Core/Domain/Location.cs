@@ -1,5 +1,3 @@
-using Domain;
-
 namespace StudBook.Domain;
  
 /// <summary>Конкретное место: денник или загон (устав, А-8). Название уникально.</summary>

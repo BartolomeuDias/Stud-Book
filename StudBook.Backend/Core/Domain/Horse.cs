@@ -1,8 +1,4 @@
-
-
-using StudBook.Domain;
-
-namespace Domain;
+namespace StudBook.Domain;
 
 public class Horse
 {

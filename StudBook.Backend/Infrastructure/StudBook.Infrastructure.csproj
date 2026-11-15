@@ -17,6 +17,12 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Seed/demo_data_v1.json">
+      <LogicalName>demo_data_v1.json</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>  
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

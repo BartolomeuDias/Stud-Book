@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using StudBook.Domain;
-
-namespace Domain;
+namespace StudBook.Domain;
 
 public class HorsePlacement
 {

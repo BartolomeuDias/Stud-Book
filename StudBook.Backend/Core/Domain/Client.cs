@@ -1,5 +1,3 @@
-using Domain;
-
 namespace StudBook.Domain;
  
 public class Client
